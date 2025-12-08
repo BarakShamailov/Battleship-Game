@@ -1,3 +1,5 @@
+const DEFAULT_SIZE = 12;
+
 class Ship{
     #length;
     #hits;
@@ -157,6 +159,54 @@ class Gameboard{
     }
 }
 
+
+class Player{
+    #previousMoves;
+    constructor(name, type = 'human'){
+        this.name = name;
+        this.type = type;
+        this.gameBoard = new Gameboard(DEFAULT_SIZE);
+        this.#previousMoves = new Set();
+    }
+    getName(){
+        return this.name;
+    }
+    getType(){
+        return this.type;
+    }
+
+    getBoard(){
+        return this.gameBoard;
+    }
+
+    attack(opponent, coordinate){
+        if (this.type === 'human'){
+            return opponent.gameBoard.receiveAttack(coordinate);
+        }
+        if(this.type === 'computer'){
+            const randomHit = this.#generateRandomHit();
+            return opponent.gameBoard.receiveAttack(randomHit);
+
+        }
+
+    }
+
+    #generateRandomHit(){
+        let r, c, key;
+        do {
+            r = Math.floor(Math.random() * DEFAULT_SIZE);
+            c = Math.floor(Math.random() * DEFAULT_SIZE);
+            key = `${r},${c}`;
+        } while (this.#previousMoves.has(key));
+
+        this.#previousMoves.add(key);
+        return [r, c];
+    
+    }
+}
+
+
+
 const board = new Gameboard(4);
 board.placeShip([0,0],[3,0],4);
 board.placeShip([1,1],[1,3],3);
@@ -174,6 +224,6 @@ board.receiveAttack([3,0]);
 console.log(board.allShipsSunks());
 
 
-export {Ship, Gameboard};
+export {Ship, Gameboard, Player};
 
 
