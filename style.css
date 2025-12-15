@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle at top, #0b3d91, #041f3d);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-header {
+    margin-top: 20px;
+}
+
+.game-header h1 {
+    font-size: 3.5rem;
+    letter-spacing: 6px;
+    text-align: center;
+    color: #00e5ff;
+    text-shadow:
+        0 0 10px rgba(0, 229, 255, 0.6),
+        0 0 20px rgba(0, 229, 255, 0.4);
+}
+
+.scoreboard {
+    width: 80%;
+    max-width: 900px;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+}
+
+.player-info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 25px;
+    border-radius: 12px;
+    min-width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.player-info h2 {
+    margin-bottom: 8px;
+    color: #ffea00;
+}
+
+.player-info p {
+    font-size: 1.2rem;
+}
+
+.game-area {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+.board-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.board-container h3 {
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+    color: #b3e5fc;
+}
+
+
+:root {
+    --board-size: 480px;
+    --grid-size: 12;
+}
+
+.board {
+    width: var(--board-size);
+    height: var(--board-size);
+    display: grid;
+    grid-template-columns: repeat(var(--grid-size), 1fr);
+    grid-template-rows: repeat(var(--grid-size), 1fr);
+    gap: 2px;
+    background: #012a4a;
+    padding: 6px;
+    border-radius: 12px;
+}
+
+.cell {
+    background: #01579b;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.cell:hover {
+    background: #0288d1;
+    transform: scale(1.05);
+}
+
+.cell.ship {
+    background: #90caf9;
+}
+
+.cell.hit {
+    background: #e53935;
+}
+
+.cell.miss {
+    background: #455a64;
+}
+
+.board.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}

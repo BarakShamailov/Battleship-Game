@@ -3,11 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BattleShip Game</title>
+
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    
+
+    <!-- HEADER -->
+    <header class="game-header">
+        <h1>BATTLESHIP</h1>
+    </header>
+
+    <!-- SCOREBOARD -->
+    <section class="scoreboard">
+        <div class="player-info">
+            <h2 id="player-name">Player</h2>
+            <p>Score: <span id="player-score">0</span></p>
+        </div>
+
+        <div class="player-info">
+            <h2 id="computer-name">Computer</h2>
+            <p>Score: <span id="computer-score">0</span></p>
+        </div>
+    </section>
+
+    <!-- GAME AREA -->
+    <main class="game-area">
+        <div class="board-container">
+            <h3>Your Board</h3>
+            <div id="player-board" class="board"></div>
+        </div>
+
+        <div class="board-container">
+            <h3>Enemy Board</h3>
+            <div id="computer-board" class="board"></div>
+        </div>
+    </main>
 </body>
 
-    <script src="script.js"></script>
+    <script  type="module" src="main.js"></script>
 </html>
