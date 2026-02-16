@@ -103,7 +103,7 @@ body {
 }
 
 .cell.ship {
-    background: #90caf9;
+    background: #989898;
 }
 
 .cell.hit {
@@ -111,7 +111,7 @@ body {
 }
 
 .cell.miss {
-    background: #455a64;
+    background: #00aaf9;
 }
 
 .board.disabled {

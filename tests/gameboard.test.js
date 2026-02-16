@@ -1,4 +1,4 @@
-import {Gameboard} from "./script";
+import {Gameboard} from "../src/script";
 
 
 describe('Gameboard class', () => {

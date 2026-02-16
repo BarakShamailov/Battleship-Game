@@ -10,11 +10,11 @@ const domController = (() => {
                 cell.dataset.row = r;
                 cell.dataset.col = c;
 
-                const value = board.getBoard()[r][c];
-
+                const value = board.getBoard()[r][c];                
                 if (value === "missed") cell.classList.add("miss");
                 if (value === "X") cell.classList.add("hit");
-                if (!hideShips && value !== "null" && value !== "missed" && value !== "X") {
+                if (!hideShips && !isNaN(parseInt(value))) {
+                    cell.classList.add("ship");
                     cell.classList.add("ship");
                 }
 
@@ -31,5 +31,6 @@ const domController = (() => {
     return { renderBoard, showMessage };
 
 })();
+
 
 export default domController;

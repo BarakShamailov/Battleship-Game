@@ -1,4 +1,4 @@
-import {Ship} from "./script";
+import {Ship} from "../src/script";
 
 
 describe("Ship class", () => {

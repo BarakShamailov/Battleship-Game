@@ -113,6 +113,8 @@ class Gameboard{
                 this.#board[r1][c] = shipId;
             }
         }
+
+        return true
     }
         
 
@@ -179,7 +181,7 @@ class Player{
         return this.gameBoard;
     }
 
-    attack(opponent, coordinate){
+    attack(opponent, coordinate = null){
         if (this.type === 'human'){
             return opponent.gameBoard.receiveAttack(coordinate);
         }

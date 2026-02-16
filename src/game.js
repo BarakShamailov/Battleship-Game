@@ -14,7 +14,7 @@ export default function createGame(playerName) {
             result = currentPlayer.attack(enemy, coordinate);
         } else {
             // Computer automatically attacks
-            const move = currentPlayer.getMove(); // You need to implement this public method
+            const move = currentPlayer.attack(); // You need to implement this public method
             result = currentPlayer.attack(enemy, move);
         }
 
