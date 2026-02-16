@@ -1,4 +1,4 @@
-const { Player } = require("../src/script.js");
+const { Player } = require("../docs/script.js");
 
 class MockBoard {
     constructor(size = 12) {
